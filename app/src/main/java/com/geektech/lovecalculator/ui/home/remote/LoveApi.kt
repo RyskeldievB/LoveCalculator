@@ -1,6 +1,5 @@
-package com.geektech.lovecalculator
+package com.geektech.lovecalculator.ui.home.remote
 
-import com.geektech.lovecalculator.model.LoveModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

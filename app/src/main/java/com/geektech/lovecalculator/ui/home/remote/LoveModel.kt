@@ -1,4 +1,4 @@
-package com.geektech.lovecalculator.model
+package com.geektech.lovecalculator.ui.home.remote
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
