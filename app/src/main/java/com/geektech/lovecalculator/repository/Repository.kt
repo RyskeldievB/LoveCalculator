@@ -1,19 +1,23 @@
-package com.geektech.lovecalculator.ui.home.repository
+package com.geektech.lovecalculator.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.geektech.lovecalculator.data.local.Pref
+import com.geektech.lovecalculator.ui.home.remote.LoveApi
 import com.geektech.lovecalculator.ui.home.remote.LoveModel
-import com.geektech.lovecalculator.ui.home.remote.RetrofitService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class Repository {
+class Repository @Inject constructor(private val api: LoveApi) {
+    @Inject
+    lateinit var pref: Pref
 
     fun getLiveLove(firstName: String, secondName: String): MutableLiveData<LoveModel> {
         val liveData = MutableLiveData<LoveModel>()
-        RetrofitService().getLoveApi().getResultLove(
-            firstName = firstName, secondName = secondName
+        api.getResultLove(
+            firstName, secondName
         ).enqueue(object : Callback<LoveModel> {
             override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
                 if (response.isSuccessful) {
@@ -25,5 +29,14 @@ class Repository {
             }
         })
         return liveData
+    }
+
+    fun boardingShowed(): Boolean {
+        val liveData = MutableLiveData<Boolean>()
+        return pref.boardingShowed()
+    }
+
+    fun saveBoardingShowed(isShow:Boolean){
+        pref.saveBoardingShowed(isShow)
     }
 }

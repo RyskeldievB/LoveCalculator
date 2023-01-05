@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/boardingFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -15,4 +15,9 @@
         android:name="com.geektech.lovecalculator.ui.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/boardingFragment"
+        android:name="com.geektech.lovecalculator.ui.boarding.BoardingFragment"
+        android:label="fragment_boarding"
+        tools:layout="@layout/fragment_boarding" />
 </navigation>

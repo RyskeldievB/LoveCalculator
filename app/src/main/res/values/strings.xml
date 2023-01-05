@@ -10,4 +10,7 @@
     <string name="try_again">Try again</string>
     <string name="your_score">Your score</string>
     <string name="percentage">0</string>
+    <string name="title">title</string>
+    <string name="desc">desc</string>
+    <string name="get_started">Get started</string>
 </resources>
