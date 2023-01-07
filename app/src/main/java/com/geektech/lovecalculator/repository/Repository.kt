@@ -10,7 +10,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class Repository @Inject constructor(private val api: LoveApi) {
+class Repository @Inject constructor(private val api: LoveApi)  {
     @Inject
     lateinit var pref: Pref
 

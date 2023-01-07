@@ -13,4 +13,6 @@
     <string name="title">title</string>
     <string name="desc">desc</string>
     <string name="get_started">Get started</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
 </resources>

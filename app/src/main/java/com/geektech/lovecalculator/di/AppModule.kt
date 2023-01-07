@@ -3,6 +3,8 @@ package com.geektech.lovecalculator.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import com.geektech.lovecalculator.data.local.room.AppDataBase
+import com.geektech.lovecalculator.data.local.room.LoveDao
 import com.geektech.lovecalculator.ui.home.remote.LoveApi
 import dagger.Module
 import dagger.Provides
@@ -27,4 +29,9 @@ class AppModule {
             Context.MODE_PRIVATE
         )
     }
+//
+//    @Provides
+//    fun loveDaoProvide(appDataBase: AppDataBase): LoveDao{
+//        return appDataBase.getDao()
+//    }
 }

@@ -85,42 +85,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etSecondName" />
 
-    <ImageView
-        android:id="@+id/ivHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_history"
-        app:layout_constraintBottom_toTopOf="@id/tvHistory"
-        app:layout_constraintEnd_toEndOf="@id/tvHistory"
-        app:layout_constraintStart_toStartOf="@id/tvHistory" />
-
-    <TextView
-        android:id="@+id/tvHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:text="@string/history"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivHeart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_heart"
-        app:layout_constraintBottom_toTopOf="@id/tvHome"
-        app:layout_constraintEnd_toEndOf="@id/tvHome"
-        app:layout_constraintStart_toStartOf="@id/tvHome" />
-
-    <TextView
-        android:id="@+id/tvHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:text="@string/home"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

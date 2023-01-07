@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.geektech.lovecalculator.App
 import com.geektech.lovecalculator.R
 import com.geektech.lovecalculator.databinding.FragmentHomeBinding
 import com.geektech.taskmanager.key.Key
@@ -38,6 +39,7 @@ class HomeFragment : Fragment() {
                     binding.etFirstName.text.toString(),
                     binding.etSecondName.text.toString()
                 ).observe(viewLifecycleOwner) {
+                    App.appDataBase.getDao().insertLove(it)
                     findNavController().navigate(R.id.resultFragment, bundleOf(Key.KEY_DATA to it))
                 }
             }

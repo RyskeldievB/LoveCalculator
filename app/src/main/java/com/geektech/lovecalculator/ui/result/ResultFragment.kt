@@ -25,7 +25,11 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setData()
-        navigateHome()
+        initClickers()
+    }
+
+    private fun initClickers() {
+        binding.btnTryAgain.setOnClickListener { findNavController().navigate(R.id.homeFragment) }
     }
 
     private fun setData() {
@@ -39,14 +43,6 @@ class ResultFragment : Fragment() {
                 tvPercentage.text = data.percentage
                 tvResult.text = data.result
             }
-        }
-    }
-
-    private fun navigateHome() {
-        with(binding) {
-            btnTryAgain.setOnClickListener { findNavController().navigate(R.id.homeFragment) }
-            ivHeart.setOnClickListener { findNavController().navigate(R.id.homeFragment) }
-            tvHome.setOnClickListener { findNavController().navigate(R.id.homeFragment) }
         }
     }
 }
