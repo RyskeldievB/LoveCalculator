@@ -15,4 +15,12 @@ class HomeViewModel @Inject constructor(
     fun getLiveLoveModel(firstName: String, secondName: String): LiveData<LoveModel> {
         return repository.getLiveLove(firstName, secondName)
     }
+
+    fun insertLove(model: LoveModel) {
+        repository.insertLove(model)
+    }
+
+    fun updateLove(model: LoveModel) {
+        repository.updateLove(model)
+    }
 }

@@ -1,5 +1,6 @@
 package com.geektech.lovecalculator.ui.history.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
@@ -7,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.geektech.lovecalculator.databinding.ItemHistoryBinding
 import com.geektech.lovecalculator.ui.home.remote.LoveModel
 
-class HistoryAdapter : Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter(private val onClick: (LoveModel) -> Unit) :
+    Adapter<HistoryAdapter.HistoryViewHolder>() {
     val data = arrayListOf<LoveModel>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun loadData(newData: List<LoveModel>) {
         data.clear()
         data.addAll(newData)
@@ -33,10 +36,11 @@ class HistoryAdapter : Adapter<HistoryAdapter.HistoryViewHolder>() {
     inner class HistoryViewHolder(private val binding: ItemHistoryBinding) :
         ViewHolder(binding.root) {
         fun bind(model: LoveModel) {
-            with(binding){
+            with(binding) {
                 tvFirstName.text = model.firstName
                 tvSecondName.text = model.secondName
                 tvPercentage.text = model.percentage
+                itemView.setOnClickListener { onClick(model) }
             }
         }
     }

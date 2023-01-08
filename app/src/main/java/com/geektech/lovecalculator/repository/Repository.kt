@@ -1,8 +1,10 @@
 package com.geektech.lovecalculator.repository
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.geektech.lovecalculator.data.local.Pref
+import com.geektech.lovecalculator.data.local.room.LoveDao
 import com.geektech.lovecalculator.ui.home.remote.LoveApi
 import com.geektech.lovecalculator.ui.home.remote.LoveModel
 import retrofit2.Call
@@ -10,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class Repository @Inject constructor(private val api: LoveApi)  {
+class Repository @Inject constructor(private val api: LoveApi, private val loveDao: LoveDao)  {
     @Inject
     lateinit var pref: Pref
 
@@ -38,5 +40,17 @@ class Repository @Inject constructor(private val api: LoveApi)  {
 
     fun saveBoardingShowed(isShow:Boolean){
         pref.saveBoardingShowed(isShow)
+    }
+
+    fun getAllLove() : LiveData<List<LoveModel>>{
+        return loveDao.getAllLove()
+    }
+
+    fun insertLove(model:LoveModel){
+        loveDao.insertLove(model)
+    }
+
+    fun updateLove(model:LoveModel){
+        loveDao.updateLove(model)
     }
 }
